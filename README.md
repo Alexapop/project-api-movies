@@ -26,8 +26,38 @@ El proyecto debe incluir:
 
 ## Tecnologías
 
-- Java 21.
-- Spring Boot.
+- Maven
+- Java 21
+- Spring Boot
+
+## Analysis previa
+
+Tenemos 4 entidades principales: `movies`, `genre`, `years` y `actors`.
+
+### Relaciones
+
+- **Movies N:M Genre**: una película puede tener varios géneros y un género puede clasificar muchas películas.
+- **Years 1:N Movies**: un año puede tener muchas películas, pero cada película pertenece a un solo año.
+- **Movies N:M Actors**: una película puede contar con varios actores y un actor puede participar en muchas películas.
+
+### Tablas
+
+| Tabla | Descripción |
+|--------|-------------|
+| `movies` | Información de las películas. |
+| `genre` | Catálogo de géneros cinematográficos. |
+| `years` | Años de lanzamiento de las películas. |
+| `actors` | Catálogo de actores. |
+| `movies_genre` | Tabla intermedia para la relación N:M entre películas y géneros. |
+| `movies_actors` | Tabla intermedia para la relación N:M entre películas y actores. |
+
+### Chen Diagram
+
+![Chen Diagram](docs/assets/diagram-chen.png)
+
+### Crow's Foot Diagram
+
+![Crow's Foot Diagram](docs/assets/diagram-pata-de-gallo.png)
 
 
 
