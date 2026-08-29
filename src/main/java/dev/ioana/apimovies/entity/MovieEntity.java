@@ -60,7 +60,31 @@ public class MovieEntity {
         return title;
     }
 
+    public YearEntity getYear() {
+        return year;
+    }
+
+    public Set<GenreEntity> getGenres() {
+        return genres;
+    }
+
+    public Set<ActorEntity> getActors() {
+        return actors;
+    }
+
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setYear(YearEntity year) {
+        this.year = year;
+    }
+
+    public void setGenres(Set<GenreEntity> genres) {
+        this.genres = genres;
+    }
+
+    public void setActors(Set<ActorEntity> actors) {
+        this.actors = actors;
     }
 }
