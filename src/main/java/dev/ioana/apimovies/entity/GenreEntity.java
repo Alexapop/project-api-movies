@@ -12,7 +12,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "genre")
+@Table(name = "genres")
 public class GenreEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,7 @@ public class GenreEntity {
     @Column(name = "name_genre")
     private String name;
 
-    @ManyToMany(mappedBy = "genres",fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "genres", fetch = FetchType.LAZY)
     private Set<MovieEntity> movies = new HashSet<>();
 
     public GenreEntity() {
