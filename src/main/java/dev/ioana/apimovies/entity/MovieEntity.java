@@ -34,9 +34,15 @@ public class MovieEntity {
 
     // movies-genre relationship
 
-    @ManyToMany (fetch = FetchType.LAZY)
-    @JoinTable(name = "movies_genre", joinColumns = @JoinColumn(name = "id_movie"), inverseJoinColumns = @JoinColumn(name = "id_genre"))
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "movies_genres", joinColumns = @JoinColumn(name = "id_movie"), inverseJoinColumns = @JoinColumn(name = "id_genre"))
     private Set<GenreEntity> genres = new HashSet<>();
+
+    // movies-actors relationship
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "movies_actors", joinColumns = @JoinColumn(name = "id_movie"), inverseJoinColumns = @JoinColumn(name = "id_actor"))
+    private Set<ActorEntity> actors = new HashSet<>();
 
     public MovieEntity() {
 
