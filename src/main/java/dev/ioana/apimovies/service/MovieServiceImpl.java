@@ -3,7 +3,6 @@ package dev.ioana.apimovies.service;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
@@ -14,6 +13,7 @@ import dev.ioana.apimovies.entity.ActorEntity;
 import dev.ioana.apimovies.entity.GenreEntity;
 import dev.ioana.apimovies.entity.MovieEntity;
 import dev.ioana.apimovies.entity.YearEntity;
+import dev.ioana.apimovies.exceptions.MovieNotFoundException;
 import dev.ioana.apimovies.mapper.MovieMapper;
 import dev.ioana.apimovies.repository.ActorRepository;
 import dev.ioana.apimovies.repository.GenreRepository;
@@ -111,7 +111,7 @@ public class MovieServiceImpl implements InterfaceMovieService {
 
     private MovieEntity getMovieEntityById(Long id) {
         return movieRepository.findById(id)
-                .orElseThrow(() -> new NoSuchElementException(
+                .orElseThrow(() -> new MovieNotFoundException(
                         "Movie not found with id: " + id));
     }
 
